@@ -1,0 +1,139 @@
+---
+# 瑠璃紺（るりこん）を基調にしたデザイン
+---
+
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&family=Noto+Serif+JP:wght@500;700&display=swap");
+
+// 色
+$ruri:        #19448e;  // 瑠璃紺
+$ruri-dark:   #0f2c5e;  // 濃い瑠璃紺（ヘッダー・フッター）
+$ruri-light:  #e8eef8;  // 淡い瑠璃色（背景のアクセント）
+$kin:         #c9a95c;  // 金（差し色）
+
+// minima の変数を上書き
+$base-font-family: "Noto Sans JP", "Hiragino Kaku Gothic ProN", "Hiragino Sans", Meiryo, sans-serif;
+$heading-font:     "Noto Serif JP", "Hiragino Mincho ProN", "Yu Mincho", serif;
+$base-line-height: 1.9;
+$text-color:       #1c2433;
+$background-color: #f6f8fc;
+$brand-color:      $ruri;
+$grey-color:       #6b7488;
+
+@import "minima";
+
+// ---- ヘッダー ----
+.site-header {
+  background: $ruri-dark;
+  border-top: 4px solid $kin;
+  border-bottom: none;
+}
+
+.site-title,
+.site-title:visited {
+  color: #fff;
+  font-family: $heading-font;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+}
+
+.site-nav {
+  .page-link,
+  .page-link:visited {
+    color: rgba(255, 255, 255, 0.85);
+  }
+  .page-link:hover {
+    color: #fff;
+    text-decoration: none;
+    border-bottom: 1px solid $kin;
+  }
+  .menu-icon > svg path {
+    fill: #fff;
+  }
+
+  @include media-query($on-palm) {
+    background-color: $ruri-dark;
+    border-color: $ruri;
+  }
+}
+
+// ---- 本文 ----
+h1, h2, h3, h4,
+.post-title,
+.post-list-heading,
+.page-heading {
+  font-family: $heading-font;
+  color: $ruri-dark;
+}
+
+.page-content {
+  padding: $spacing-unit * 1.5 0;
+}
+
+a {
+  color: $ruri;
+  &:visited { color: darken($ruri, 8%); }
+  &:hover   { color: $ruri-dark; }
+}
+
+.post-content h2 {
+  border-left: 5px solid $ruri;
+  padding: 0.1em 0 0.1em 0.6em;
+  margin-top: $spacing-unit * 1.2;
+}
+
+blockquote {
+  border-left-color: $ruri;
+  background: $ruri-light;
+  color: $text-color;
+  font-style: normal;
+  padding: 0.6em 1em;
+}
+
+.post-meta {
+  color: $grey-color;
+}
+
+// ---- 記事一覧（カード風）----
+.post-list > li {
+  background: #fff;
+  border: 1px solid #dde4f0;
+  border-top: 3px solid $ruri;
+  border-radius: 6px;
+  padding: $spacing-unit * 0.7 $spacing-unit * 0.8;
+  box-shadow: 0 2px 6px rgba(15, 44, 94, 0.06);
+}
+
+.post-list .post-link {
+  font-family: $heading-font;
+  color: $ruri-dark;
+  &:hover { color: $ruri; text-decoration: none; }
+}
+
+// ---- 記事ページ ----
+.post {
+  background: #fff;
+  border: 1px solid #dde4f0;
+  border-radius: 6px;
+  padding: $spacing-unit;
+
+  @include media-query($on-palm) {
+    padding: $spacing-unit * 0.6;
+  }
+}
+
+.post-header {
+  border-bottom: 1px solid #dde4f0;
+  padding-bottom: $spacing-unit * 0.5;
+}
+
+// ---- フッター ----
+.site-footer {
+  background: $ruri-dark;
+  color: rgba(255, 255, 255, 0.8);
+  border-top: 4px solid $kin;
+
+  .footer-heading { color: #fff; font-family: $heading-font; }
+  .footer-col-wrapper { color: rgba(255, 255, 255, 0.75); }
+  a, a:visited    { color: rgba(255, 255, 255, 0.9); }
+  .svg-icon       { fill: rgba(255, 255, 255, 0.8); }
+}
