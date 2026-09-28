@@ -1,0 +1,34 @@
+# サイト全体の設定
+title: わたしの日記
+description: 日々のできごとを気ままに綴る日記ブログ
+author: tvomsahxi
+lang: ja
+
+# GitHub Pages の公開URL: https://tvomsahxi.github.io/journal-profile/
+url: "https://tvomsahxi.github.io"
+baseurl: "/journal-profile"
+
+timezone: Asia/Tokyo
+theme: minima
+plugins:
+  - jekyll-feed
+  - jekyll-seo-tag
+
+permalink: /:year/:month/:day/:title/
+show_excerpts: true
+# 日時が未来になっている記事も表示する（時刻の書き間違いで記事が消えるのを防ぐ）
+future: true
+
+minima:
+  date_format: "%Y年%m月%d日"
+
+header_pages:
+  - about.md
+
+exclude:
+  - README.md
+  - Gemfile
+  - Gemfile.lock
+  - _drafts/template.md
+  - vendor/
+  - .bundle/
